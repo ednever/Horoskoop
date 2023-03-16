@@ -10,8 +10,8 @@ namespace Horoskoop
 {
     public partial class MainPage : ContentPage
     {
-        List<ContentPage> contentPages = new List<ContentPage>() { new Test() };
-        List<string> tekstid = new List<string> { "Test" };
+        List<ContentPage> contentPages = new List<ContentPage>() { };
+        List<string> tekstid = new List<string> {  };
 
         public MainPage()
         {
