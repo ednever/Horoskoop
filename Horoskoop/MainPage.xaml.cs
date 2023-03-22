@@ -11,7 +11,7 @@ namespace Horoskoop
     public partial class MainPage : ContentPage
     {
         List<ContentPage> contentPages = new List<ContentPage>() { new Horoskoop(), new Ajaplaan() };
-        List<string> tekstid = new List<string> { "Horoskoop", "Ajaplann" };
+        List<string> tekstid = new List<string> { "Horoskoop", "Ajaplaan" };
 
         public MainPage()
         {

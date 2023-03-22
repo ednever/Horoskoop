@@ -20,7 +20,7 @@ namespace Horoskoop
 
         public Horoskoop()
         {
-            //InitializeComponent();
+            InitializeComponent();
             for (int i = 0; i < months.Count; i++)
             {
                 horoskoop.Add(tahtkujud[i], months[i]);
@@ -29,29 +29,32 @@ namespace Horoskoop
             datePicker = new DatePicker
             {
                 Format = "dd.MM.yyyy",
+                
             };
             datePicker.DateSelected += DatePicker_DateSelected;
 
             image = new Image
             {
-                Source = "Aries.png",
-                HeightRequest= 200,
-                WidthRequest= 200,
-                
-                BackgroundColor = Color.Beige,
+                Source = ImageSource.FromFile("muna.jpg"),
+                HeightRequest = 200,
+                WidthRequest = 200,
             };
-            
+
+            StackLayout st1 = new StackLayout
+            {
+                Children = { datePicker, image }
+            };
 
             StackLayout st = new StackLayout
             {
-                Children = { datePicker, image }
+                Children = { st1 }
             };
             Content = st;
         }
 
-        void DatePicker_DateSelected(object sender, DateChangedEventArgs e)
+        void DatePicker_DateSelected(object sender, DateChangedEventArgs e) //менять картинку в зависимости от месяца
         {
-            image.Source = "Aquarius.png";
+            image.Source = ImageSource.FromFile("muna.jpg"); 
         }
     }
 }

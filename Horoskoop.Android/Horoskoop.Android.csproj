@@ -87,7 +87,9 @@
     <AndroidResource Include="Resources\mipmap-xxxhdpi\icon.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\launcher_foreground.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Resources\drawable\margid\" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Horoskoop\Horoskoop.csproj">
       <Project>{2BEF0CF6-87F4-4323-B754-8B3B7B94B833}</Project>
@@ -95,18 +97,40 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\drawable\Aquarius.png" />
-    <Content Include="Resources\drawable\Aries.png" />
-    <Content Include="Resources\drawable\Cancer.png" />
-    <Content Include="Resources\drawable\Capricorn.png" />
-    <Content Include="Resources\drawable\Gemini.png" />
-    <Content Include="Resources\drawable\Leo.png" />
-    <Content Include="Resources\drawable\Libra.png" />
-    <Content Include="Resources\drawable\Pisces.png" />
-    <Content Include="Resources\drawable\Sagittarius.png" />
-    <Content Include="Resources\drawable\Scorpio.png" />
-    <Content Include="Resources\drawable\Taurus.png" />
-    <Content Include="Resources\drawable\Virgo.png" />
+    <AndroidResource Include="Resources\drawable\muna.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\eesti.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\warmup.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\matem.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\vene.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\loun.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\fuusika.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\keemia.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\lill.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\gym.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\ohtusook.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\kodutoo.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>
