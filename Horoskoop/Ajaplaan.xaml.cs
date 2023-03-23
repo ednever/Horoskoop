@@ -15,6 +15,8 @@ namespace Horoskoop
         Label lbl;
         List<string> tegevused = new List<string> { "Soojendus", "Hommikusöök", "Eesti keel", "Matemaatika", "Vene keel", "Lõuna", "Füüsika", "Keemia", "Lillede kastmine", "Trenn", "Õhtusöök", "Kodutöö tegemine" };
         List<string> pildid = new List<string> { "warmup", "muna", "eesti", "matem", "vene", "loun", "fuusika", "keemia", "lill", "gym", "ohtusook", "kodutoo" };
+        TimePicker timePicker;
+        List<TimePicker> timePickers = new List<TimePicker>();
 
         public Ajaplaan()
         {            
@@ -43,7 +45,12 @@ namespace Horoskoop
                 tap.Tapped += Tap_Tapped;
                 image.GestureRecognizers.Add(tap);
 
-                TimePicker timePicker = new TimePicker { Time = new TimeSpan(i + 7, 0, 0), FontSize = 16 };
+                timePicker = new TimePicker 
+                { 
+                    Time = new TimeSpan(i + 7, 0, 0), 
+                    FontSize = 16 
+                };
+                timePickers.Add(timePicker);
 
                 Frame frame1 = new Frame
                 {                        
@@ -63,7 +70,9 @@ namespace Horoskoop
                     VerticalOptions = LayoutOptions.Center
                 };
 
-                StackLayout stackLayout = new StackLayout { Orientation = StackOrientation.Horizontal, Children = { image, frame1, label } };
+                CheckBox checkBox = new CheckBox();
+
+                StackLayout stackLayout = new StackLayout { Orientation = StackOrientation.Horizontal, Children = { image, frame1, label, checkBox } };
                 Frame frame = new Frame
                 {
                     BorderColor = Color.Black,
@@ -82,7 +91,7 @@ namespace Horoskoop
         void Tap_Tapped(object sender, EventArgs e)
         {
             Image img = (Image)sender;
-            DisplayAlert(tegevused[int.Parse(img.AutomationId)],"yoooooooooooooooooooooooooooo","Tagasi");
+            DisplayAlert(tegevused[int.Parse(img.AutomationId)],"Toimub kell " + timePickers[int.Parse(img.AutomationId)].Time.ToString() + ". Edu sulle!","Tagasi");
                         
         }
     }
