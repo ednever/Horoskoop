@@ -17,19 +17,22 @@ namespace Horoskoop
         Dictionary<string, string> horoskoop = new Dictionary<string, string>();
         DatePicker datePicker;
         Image image;
+        Picker picker;
 
         public Horoskoop()
         {
-            InitializeComponent();
+            picker = new Picker();
+
             for (int i = 0; i < months.Count; i++)
             {
                 horoskoop.Add(tahtkujud[i], months[i]);
+                picker.Items.Add(tahtkujud[i]); 
             }
-
+            picker.PropertyChanged += Picker_PropertyChanged;
+                        
             datePicker = new DatePicker
             {
-                Format = "dd.MM.yyyy",
-                
+                Format = "dd.MM.yyyy",                
             };
             datePicker.DateSelected += DatePicker_DateSelected;
 
@@ -42,7 +45,7 @@ namespace Horoskoop
 
             StackLayout st1 = new StackLayout
             {
-                Children = { datePicker, image }
+                Children = { datePicker, picker, image }
             };
 
             StackLayout st = new StackLayout
@@ -52,9 +55,15 @@ namespace Horoskoop
             Content = st;
         }
 
+        void Picker_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+        {
+            datePicker.Date = DateTime.Now;
+        }
+
         void DatePicker_DateSelected(object sender, DateChangedEventArgs e) //менять картинку в зависимости от месяца
         {
             image.Source = ImageSource.FromFile("muna.jpg"); 
+
         }
     }
 }
