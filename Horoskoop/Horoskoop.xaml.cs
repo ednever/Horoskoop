@@ -57,13 +57,17 @@ namespace Horoskoop
 
         void Picker_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
         {
-            datePicker.Date = DateTime.Now;
+            Picker pckr = (Picker)sender;
+            //string a = horoskoop[pckr.SelectedItem.ToString()]; //Исправить ошибку
+
+            //int month = months.IndexOf(horoskoop[pckr.SelectedItem.ToString()]) + 1;
+            //datePicker.Date = new DateTime(0000, month, 00);
+                                        
         }
 
         void DatePicker_DateSelected(object sender, DateChangedEventArgs e) //менять картинку в зависимости от месяца
         {
-            image.Source = ImageSource.FromFile("muna.jpg"); 
-
+            image.Source = ImageSource.FromFile("scorpio.jpg");
         }
     }
 }

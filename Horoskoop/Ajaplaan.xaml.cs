@@ -82,13 +82,7 @@ namespace Horoskoop
         void Tap_Tapped(object sender, EventArgs e)
         {
             Image img = (Image)sender;
-            ContentPage contentPage = new ContentPage
-            {
-                //IsVisible = false,
-                WidthRequest = 300,
-                HeightRequest= 200,
-            };
-            //contentPage.
+            DisplayAlert(tegevused[int.Parse(img.AutomationId)],"yoooooooooooooooooooooooooooo","Tagasi");
                         
         }
     }
