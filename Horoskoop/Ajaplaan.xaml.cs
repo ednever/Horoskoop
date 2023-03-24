@@ -91,8 +91,7 @@ namespace Horoskoop
         void Tap_Tapped(object sender, EventArgs e)
         {
             Image img = (Image)sender;
-            DisplayAlert(tegevused[int.Parse(img.AutomationId)],"Toimub kell " + timePickers[int.Parse(img.AutomationId)].Time.ToString() + ". Edu sulle!","Tagasi");
-                        
+            DisplayAlert(tegevused[int.Parse(img.AutomationId)],"Toimub kell " + timePickers[int.Parse(img.AutomationId)].Time.ToString() + ". Edu sulle!","Tagasi");                       
         }
     }
 }
